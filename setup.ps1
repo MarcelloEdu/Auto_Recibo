@@ -16,5 +16,15 @@ Write-Host "🛠️ Instalando dependências do requirements.txt..."
 .\venv\Scripts\pip install --upgrade pip
 .\venv\Scripts\pip install -r requirements.txt
 
+#se nao hexistir, cria pasta IDV e recibos
+if (!(Test-Path -Path "IDV")) {
+    Write-Host "📁 Criando diretório IDV..."
+    New-Item -ItemType Directory -Path "IDV"
+}
+if (!(Test-Path -Path "recibos")) {
+    Write-Host "📁 Criando diretório recibos..."
+    New-Item -ItemType Directory -Path "recibos"
+}
+
 Write-Host "✅ Setup concluído com sucesso!" -ForegroundColor Green
 Write-Host "Para rodar o programa: .\venv\Scripts\python main.py"

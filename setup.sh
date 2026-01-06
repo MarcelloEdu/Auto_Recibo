@@ -19,5 +19,15 @@ source venv/bin/activate
 pip install --upgrade pip
 pip install -r requirements.txt
 
+# Se nao houver, cria pasta IDV e recibos
+if [ ! -d "IDV" ]; then
+    echo "📁 Criando diretório IDV..."
+    mkdir IDV
+fi
+if [ ! -d "recibos" ]; then
+    echo "📁 Criando diretório recibos..."
+    mkdir recibos
+fi
+
 echo -e "\e[32m✅ Setup concluído com sucesso!\e[0m"
 echo "Para rodar o programa use: source venv/bin/activate && python main.py"
